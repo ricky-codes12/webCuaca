@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Merriweather', serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body.day {
+  background-color: #fef3bd;
+}
+
+body.night {
+  background-color: #0d1b2a;
+}
+
+.weather-card {
+  position: relative;
+  z-index: 1;
+  border-radius: 20px;
+  padding: 20px;
+  width: 360px;
+  height: 600px;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weather-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 10px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #00cfff, #ffe15d);
+  z-index: -1;
+  pointer-events: none;
+}
