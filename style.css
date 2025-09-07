@@ -1,0 +1,72 @@
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Merriweather', serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.5s ease;
+}
+
+/* Background body */
+body.day {
+  background-color: #fef3bd;
+}
+
+body.night {
+  background-color: #0d1b2a;
+}
+
+/* Weather Card */
+.weather-card {
+  position: relative;
+  z-index: 1;
+  border-radius: 20px;
+  padding: 20px;
+  width: 360px;
+  height: 600px;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+/* Border gradient */
+.weather-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  z-index: -1;
+}
+
+/* Card for Day */
+body.day .weather-card::before {
+  background: url('./assets/day-mountain.png') no-repeat center bottom;
+  background-size: cover;
+  background-color: #fef3bd;
+}
+
+body.day .weather-card {
+  color: #222; /* teks gelap biar jelas di background terang */
+}
+
+/* Card for Night */
+body.night .weather-card::before {
+  background: url('./assets/night-mountain.png') no-repeat center bottom;
+  background-size: cover;
+  background-color: #0d1b2a;
+}
+
+body.night .weather-card {
+  color: #fff; /* teks terang biar jelas di background gelap */
+}
